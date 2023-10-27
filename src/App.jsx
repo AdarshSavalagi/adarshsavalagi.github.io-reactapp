@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import NavBar from './components/NavBar'
 import './App.css'
-import Container1 from './components/container1'
-import Footer from './components/footer'
-import Contact from './components/contact'
-import Techstack from './components/techstack'
-import Internship from './components/Internship'
-import Services from './components/services'
+import React from 'react';
 
+import HomeRoute from './routes/home'
 
-// scrolling
-import { Element } from 'react-scroll';
+// router
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from './routes/layout';
+import LoginRoute from './routes/login';
+import PageNotFound from './routes/pageNotFound';
+import StudentDashboard from './routes/student_dashborad';
+
 function App() {
-  
+
   return (
     <>
-    <NavBar/>
-    <Element  name="home" >
-    <Container1/>
-    </Element>
-    <Element  name="services" >
-    <Services/>
-    </Element>
-    <Element  name="internship" >
-    <Internship/>
-    </Element>
-    <Techstack/>
-    <Element  name="contact" >
-    <Contact/>
-    </Element>
-    <Footer/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/adarshsavalagi.github.io-reactapp/" element={<Layout />}>
+            <Route index element={<HomeRoute />} />
+            <Route path='login' exact element={<LoginRoute />} />
+            <Route path='student-dashboard' exact element={<StudentDashboard />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+
     </>
   )
 }

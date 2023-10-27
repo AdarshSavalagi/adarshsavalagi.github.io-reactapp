@@ -16,8 +16,6 @@ export default function NavBar() {
       document.getElementById('navbar-default').classList.remove('hidden');
     } else {
       document.getElementById('navbar-default').classList.add('hidden');
-
-
     }
   }
   // for scrolling
