@@ -1,5 +1,7 @@
 import React from 'react'
 import logo from '../assets/logo.png'
+import { Link } from 'react-scroll';
+
 export default function Footer() {
   return (
     
@@ -8,20 +10,20 @@ export default function Footer() {
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-              <a href="/" className="flex items-center">
+              <Link to="home" className="flex items-center">
                   <img src={logo} className="h-8 mr-3" alt="iris Logo" />
                   <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Aldebrans Iris</span>
-              </a>
+              </Link>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Useful links</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                       <li className="mb-4">
-                          <a href="/" className="hover:underline">Home</a>
+                          <Link to="home" spy={true} smooth={true} offset={-70} duration={500}  className="hover:underline">Home</Link>
                       </li>
                       <li>
-                          <a href="/" className="hover:underline">Services</a>
+                          <Link to="services" spy={true} smooth={true} offset={-70} duration={500} className="hover:underline">Services</Link>
                       </li>
                   </ul>
               </div>
