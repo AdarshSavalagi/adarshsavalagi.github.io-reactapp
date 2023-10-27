@@ -5,7 +5,7 @@ import chatbot from '../assets/chatbot.png'
 
 import { Link } from 'react-scroll';
 export default function NavBar() {
-  // for scrolling
+
 
 
 
@@ -20,6 +20,8 @@ export default function NavBar() {
 
     }
   }
+  // for scrolling
+
   const [scrolltopdata, setscrolltopdata] = useState('');
   const [isTop, setIsTop] = useState('hidden');
 
@@ -41,7 +43,12 @@ export default function NavBar() {
       behavior: 'smooth',
     });
   }
-
+  // for nav active
+  const [currentActive, setCurrentActive] = useState(0);
+  const navButtonClicked = (num) => {
+    setCurrentActive(num);
+    handletoggle();
+  };
   return (
     <header >
       <div className={`${scrolltopdata} z-50`} style={{ width: '100%' }}>
@@ -60,21 +67,17 @@ export default function NavBar() {
             <div className="hidden w-full md:block md:w-auto" id="navbar-default">
               <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                  <Link to="home" spy={true} smooth={true} offset={-70} duration={500} className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page" >Home</Link>
+                  <Link onClick={() => navButtonClicked(0)} to="home" spy={true} smooth={true} offset={-70} duration={500} className={`block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent  md:p-0 dark:text-white  ${currentActive == 0 ? 'bg-orange-700 md:dark:text-orange-500 md:text-orange-700' : 'md:dark:hover:bg-transparent '}`}>Home</Link>
                 </li>
                 <li>
-                  <Link to="services" spy={true} smooth={true} offset={-70} duration={500} className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"  >Services</Link>
+                  <Link onClick={() => navButtonClicked(1)} to="services" spy={true} smooth={true} offset={-70} duration={500} className={`block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent  md:p-0 dark:text-white  ${currentActive == 1 ? 'bg-orange-700 md:dark:text-orange-500 md:text-orange-700' : 'md:dark:hover:bg-transparent '}`}>Services</Link>
                 </li>
                 <li>
-                  <Link to="internship" spy={true} smooth={true} offset={-70} duration={500} className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" >Internship</Link>
+                  <Link onClick={() => navButtonClicked(2)} to="internship" spy={true} smooth={true} offset={-70} duration={500} className={`block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent  md:p-0 dark:text-white  ${currentActive == 2 ? 'bg-orange-700 md:dark:text-orange-500 md:text-orange-700' : 'md:dark:hover:bg-transparent '}`}>Internship</Link>
                 </li>
-               
+
                 <li>
-                  <Link className=" block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" to="contact"
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={500}  >Contact</Link>
+                  <Link onClick={() => navButtonClicked(3)} className={`block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent  md:p-0 dark:text-white  ${currentActive == 3 ? 'bg-orange-700 md:dark:text-orange-500 md:text-orange-700' : 'md:dark:hover:bg-transparent '}`} to="contact" spy={true} smooth={true} offset={-70} duration={500}  >Contact</Link>
                 </li>
               </ul>
             </div>
@@ -117,8 +120,8 @@ export default function NavBar() {
             </div>
             {/* <!-- Modal footer --> */}
             <div className="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-              <button data-modal-hide="default-modal" type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">I accept</button>
-              <button data-modal-hide="default-modal" type="button" className="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Decline</button>
+              <button data-modal-hide="default-modal" type="button" className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">I accept</button>
+              <button data-modal-hide="default-modal" type="button" className="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-orange-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Decline</button>
             </div>
           </div>
         </div>

@@ -30,7 +30,7 @@ const items = [
 const Techstack = () => (
     <div className='container justify-center mx-auto'>
         <div className="flex flex-col text-center w-full mb-5">
-            <h2 className="text-s text-indigo-500 tracking-widest font-medium title-font mb-1">TechStack</h2>
+            <h2 className="text-s text-orange-600 tracking-widest font-medium title-font mb-1">TechStack</h2>
             <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-3">What we use.</h1>
         </div>
         <AliceCarousel
