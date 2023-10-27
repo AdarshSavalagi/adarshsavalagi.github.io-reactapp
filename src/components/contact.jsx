@@ -1,6 +1,23 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import location from '../assets/location.svg'
 export default function Contact() {
+    const [visible ,setVisible]=useState([]);
+    useEffect(()=>{
+        const handleScroll = ()=>{
+            const cardElements = document.querySelectorAll('.contact-items');
+            const viewportHeight = window.innerHeight;
+            const threshold=viewportHeight*0.8;
+            const newVisibleCards=Array.from(cardElements).map((cardElement)=>{
+                const cardTop = cardElement.getBoundingClientRect().top;
+                return cardTop<threshold;
+            });
+            setVisible(newVisibleCards);
+        };
+        window.addEventListener('scroll',handleScroll);
+        return ()=>{
+            window.removeEventListener('scroll',handleScroll)
+        };
+    });
     return (
         <><section id='contact '>
             <div className='container mt-5  justify-center mx-auto'>
@@ -12,7 +29,7 @@ export default function Contact() {
                     {/* cards */}
                     <div className="container px-5  mx-auto">
                         <div className="grid md:grid-rows-2 ">
-                            <div className="p-2 ">
+                            <div className={`p-2 contact-items ${visible[0]?'visible':''}`}>
                                 <div className="flex rounded-lg h-full bg-gray-100 p-8 flex-col hover:shadow ">
                                     <div className="flex items-center mb-3">
                                         <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
@@ -27,7 +44,7 @@ export default function Contact() {
                                 </div>
                             </div>
                             <div className='md:columns-2'>
-                                <div className="p-2 ">
+                                <div className={`p-2 contact-items ${visible[1]?'visible':''}`}>
                                     <div className="flex rounded-lg h-full bg-gray-100 p-8 flex-col hover:shadow ">
                                         <div className="flex items-center mb-3">
                                             <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
@@ -41,7 +58,7 @@ export default function Contact() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="p-2 ">
+                                <div className={`p-2 contact-items ${visible[2]?'visible':''}`}>
                                     <div className="flex rounded-lg h-full bg-gray-100 p-8 flex-col hover:shadow ">
                                         <div className="flex items-center mb-3">
                                             <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
@@ -59,7 +76,7 @@ export default function Contact() {
                         </div>
                     </div>
                     {/* form */}
-                    <div className='container'>
+                    <div className={`container contact-items ${visible[3]?'visible':''}`}>
                         <form>
                             <div className="  flex flex-wrap mx-3 mb-6 ">
                                 <div className='w-full md:w-1/2 px-3 mb-6 md:mb-0' >
