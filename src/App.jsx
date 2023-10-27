@@ -9,6 +9,7 @@ import Layout from './routes/layout';
 import LoginRoute from './routes/login';
 import PageNotFound from './routes/pageNotFound';
 import StudentDashboard from './routes/student_dashborad';
+import ValidateCertificate from './routes/validate';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
             <Route index element={<HomeRoute />} />
             <Route path='login' exact element={<LoginRoute />} />
             <Route path='student-dashboard' exact element={<StudentDashboard />} />
+            <Route path='validate-certificate' exact element={<ValidateCertificate />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>

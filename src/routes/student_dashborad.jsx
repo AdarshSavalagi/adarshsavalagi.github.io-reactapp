@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function StudentDashboard() {
     return (
-        <div className='container w-10/12 mx-auto '>
+        <div className='container md:w-10/12 mx-auto '>
 
 
             <div className="m-3  bg-white border border-gray-200 rounded-lg shadow  dark:border-gray-700">
