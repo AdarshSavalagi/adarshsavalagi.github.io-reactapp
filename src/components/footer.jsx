@@ -17,6 +17,17 @@ export default function Footer() {
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
+                  <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Testing links</h2>
+                  <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                      <li className="mb-4">
+                          <Link to="verify"  spy={true} smooth={true} offset={-70} duration={500}  className="hover:underline">ValidateCertificate</Link>
+                      </li>
+                      <li>
+                          <Link  to="student-dashboard"  spy={true} smooth={true} offset={-70} duration={500} className="hover:underline">Student dashbaord</Link>
+                      </li>
+                  </ul>
+              </div>
+              <div>
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Useful links</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                       <li className="mb-4">
@@ -38,7 +49,7 @@ export default function Footer() {
                       </li>
                   </ul>
               </div>
-              <div>
+              {/* <div>
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                       <li className="mb-4">
@@ -48,7 +59,7 @@ export default function Footer() {
                           <a href="#" className="hover:underline">Terms &amp; Conditions</a>
                       </li>
                   </ul>
-              </div>
+              </div> */}
           </div>
       </div>
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />

@@ -21,7 +21,7 @@ function App() {
             <Route index element={<HomeRoute />} />
             <Route path='login' exact element={<LoginRoute />} />
             <Route path='student-dashboard' exact element={<StudentDashboard />} />
-            <Route path='validate-certificate' exact element={<ValidateCertificate />} />
+            <Route path='verify' exact element={<ValidateCertificate />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>
