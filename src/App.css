@@ -4,7 +4,7 @@
 body{
   font-family: 'Inter', sans-serif;
 }
-.service-card , .home, .internship-card, .contact-items{
+.service-card ,  .internship-card, .contact-items{
   opacity: 0;
   transform: translateY(20px); /* Optional: You can add a slight upward translation effect */
   transition: opacity 0.8s, transform 0.8s; /* Adjust the duration as needed */
@@ -13,4 +13,23 @@ body{
 .service-card.visible, .home.visible, .internship-card.visible, .contact-items.visible {
   opacity: 1;
   transform: translateY(0); /* Optional: Reset the translation effect */
+}
+.home,.contact-items{
+  opacity: 0;
+  transform: translateX(-20px); /* Optional: You can add a slight upward translation effect */
+  transition: opacity 0.8s, transform 0.8s; /* Adjust the duration as needed */
+}
+
+.contact-items.visible {
+  opacity: 1;
+  transform: translateX(0); /* Optional: Reset the translation effect */
+}
+.internship-card{
+  opacity: 0;
+  transform: translateX(20px); /* Optional: You can add a slight upward translation effect */
+  transition: opacity 0.8s, transform 0.8s; /* Adjust the duration as needed */
+}
+.internship-card.visible{
+  opacity: 1;
+  transform: translateX(0); /* Optional: Reset the translation effect */
 }

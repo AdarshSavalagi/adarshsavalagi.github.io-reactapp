@@ -65,13 +65,13 @@ export default function NavBar() {
             <div className="hidden w-full md:block md:w-auto" id="navbar-default">
               <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                  <Link onClick={() => navButtonClicked(0)} to="home" spy={true} smooth={true} offset={-70} duration={500} className={`block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent  md:p-0 dark:text-white  ${currentActive == 0 ? 'bg-orange-700 md:dark:text-orange-500 md:text-orange-700' : 'md:dark:hover:bg-transparent '}`}>Home</Link>
+                  <Link onClick={() => navButtonClicked(0)} to="home" spy={true} smooth={true} offset={-70} duration={600} className={`block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent  md:p-0 dark:text-white  ${currentActive == 0 ? 'bg-orange-700 md:dark:text-orange-500 md:text-orange-700' : 'md:dark:hover:bg-transparent '}`}>Home</Link>
                 </li>
                 <li>
                   <Link onClick={() => navButtonClicked(1)} to="services" spy={true} smooth={true} offset={-70} duration={500} className={`block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent  md:p-0 dark:text-white  ${currentActive == 1 ? 'bg-orange-700 md:dark:text-orange-500 md:text-orange-700' : 'md:dark:hover:bg-transparent '}`}>Services</Link>
                 </li>
                 <li>
-                  <Link onClick={() => navButtonClicked(2)} to="internship" spy={true} smooth={true} offset={-70} duration={500} className={`block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent  md:p-0 dark:text-white  ${currentActive == 2 ? 'bg-orange-700 md:dark:text-orange-500 md:text-orange-700' : 'md:dark:hover:bg-transparent '}`}>Internship</Link>
+                  <Link onClick={() => navButtonClicked(2)} to="internship" spy={true} smooth={true} offset={-70} duration={550} className={`block py-2 pl-3 pr-4 text-white  rounded md:bg-transparent  md:p-0 dark:text-white  ${currentActive == 2 ? 'bg-orange-700 md:dark:text-orange-500 md:text-orange-700' : 'md:dark:hover:bg-transparent '}`}>Internship</Link>
                 </li>
 
                 <li>

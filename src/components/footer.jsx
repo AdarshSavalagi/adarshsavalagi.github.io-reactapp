@@ -20,10 +20,10 @@ export default function Footer() {
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Testing links</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                       <li className="mb-4">
-                          <Link to="verify"  spy={true} smooth={true} offset={-70} duration={500}  className="hover:underline">ValidateCertificate</Link>
+                          <Link to="verify"   offset={-70} duration={500}  className="hover:underline">ValidateCertificate</Link>
                       </li>
                       <li>
-                          <Link  to="student-dashboard"  spy={true} smooth={true} offset={-70} duration={500} className="hover:underline">Student dashbaord</Link>
+                          <Link  to="student-dashboard"   offset={-70} duration={500} className="hover:underline">Student dashbaord</Link>
                       </li>
                   </ul>
               </div>
@@ -31,10 +31,10 @@ export default function Footer() {
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Useful links</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                       <li className="mb-4">
-                          <Link to="/adarshsavalagi.github.io-reactapp/"  spy={true} smooth={true} offset={-70} duration={500}  className="hover:underline">Home</Link>
+                          <Link to="/adarshsavalagi.github.io-reactapp/"  offset={-70} duration={600} className="hover:underline">Home</Link>
                       </li>
                       <li>
-                          <Link  to="/adarshsavalagi.github.io-reactapp/"  spy={true} smooth={true} offset={-70} duration={500} className="hover:underline">Services</Link>
+                          <Link  to="/adarshsavalagi.github.io-reactapp/" offset={-70} duration={500}  className="hover:underline">Services</Link>
                       </li>
                   </ul>
               </div>
