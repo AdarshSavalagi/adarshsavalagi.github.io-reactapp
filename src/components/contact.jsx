@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import location from '../assets/location.svg'
 import axios from 'axios';
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 
 
 
 export default function Contact() {
     const sendPostRequest=(formData)=> {
-        axios.post('https://alumni.aldoiris.online/api-business/contacts', formData)
+        axios.post('https://alumni.aldoiris.online/api-business/contacts/', formData)
             .then((response) => {
                 // Handle the response if needed
                 setLoading(false);
