@@ -9,10 +9,6 @@ import fullstack from '../assets/services/fullstack.png';
 import training from '../assets/services/training.png';
 
 
-
-// fading
-
-
 export default function Services() {
     const serviceItem = [
         { icon: fullstack, title: 'Comprehensive Fullstack Web Development Services', data: 'We specialize in delivering Comprehensive Full Stack development service, covering every aspect of your project. From front-end to back-end, we ensure a seamless user experience and robust server-side architecture. Our meticulous design, Coding, and optimization result in high-performing, scalable, and secure web solutions' },
@@ -23,7 +19,6 @@ export default function Services() {
         { icon: training, title: 'Cutting-Edge Technology Training', data: 'Empower your team with our Technology Training. We offer specialized courses to equip professionals with the latest skills and knowledge in rapidly evolving tech domains. Our expert trainers ensure practical, hands-on learning experiances, keeping participants updated with cutting-edge advancements. Invest in your teams\'s future and foster innovation with our training programs.' },
     ];
 
-// fading
 
 const [visibleCards, setVisibleCards] = useState([]);
 useEffect(() => {
