@@ -11,10 +11,11 @@ export default function Contact() {
             .then((response) => {
                 // Handle the response if needed
                 setLoading(false);
+                setSuccess(1);
                 console.log('Response:', response.data);
             })
             .catch((error) => {
-                // Handle errors
+                setSuccess(2);
                 setLoading(false);
                 console.error('Error:', error);
             });
@@ -37,6 +38,7 @@ export default function Contact() {
         };
     });
     // for sending post request 
+    const [success, setSuccess]=useState(0);
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         'name': '', 'email': '', 'message': ''
@@ -127,6 +129,32 @@ export default function Contact() {
                                 <div className='w-full px-3' >
                                     <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900">Your message</label>
                                     <textarea id="message" name='message' rows="4" value={formData.message} onChange={handleInputChange} className="border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block  p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-orange-500 dark:focus:border-orange-500  w-full" placeholder="Write your thoughts here..."></textarea>
+
+{/* alert message start */}
+<div class={` ${success==1?'':'hidden'} flex items-center p-4 my-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50  dark:text-green-400 dark:border-green-800`} role="alert">
+  <svg class="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+  </svg>
+  <span class="sr-only">Info</span>
+  <div>
+    <span class="font-medium">Success!</span> Your response was recieved.
+  </div>
+</div>
+
+
+<div class={`${success==2?'':'hidden'} flex items-center p-4 my-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50  dark:text-red-400 dark:border-red-800`} role="alert">
+  <svg class="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+  </svg>
+  <span class="sr-only">Info</span>
+  <div>
+    <span class="font-medium">Error!</span> Something went wrong
+  </div>
+</div>
+
+{/* alert message end */}
+
+
                                     <button type="submit" className={`${!loading ? '' : 'hidden'} bg-orange-600 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800 my-2  text-white`}>Submit</button>
                                     <button disabled type="button" className={`${loading ? '' : 'hidden'} bg-orange-600 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800 my-2  text-white`}>
                                         <svg aria-hidden="true" role="status" className="inline w-4 h-4 mr-3 text-white animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
