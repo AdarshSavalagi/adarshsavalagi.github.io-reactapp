@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import illustration from '../assets/illustration2.png';
+import { useNavigate  } from 'react-router-dom';
 export default function LoginRoute() {
+  const history = useNavigate();
   const [sign, setSign] = useState(0);
   const [formData, setFormData] = useState({
     'name': '',
@@ -31,6 +33,7 @@ export default function LoginRoute() {
         localStorage.setItem('access', response.data.access);
         localStorage.setItem('refresh', response.data.refresh);
         setLoading(false);
+        history('/adarshsavalagi.github.io-reactapp/student-dashboard');
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -49,6 +52,9 @@ export default function LoginRoute() {
           console.log('hi bro you are logged in');
           localStorage.setItem('access', response.data.access);
           localStorage.setItem('refresh', response.data.refresh);
+          history.push({
+            pathname:'student-dashboard',
+          });
         }
       })
       .catch((error) => {
